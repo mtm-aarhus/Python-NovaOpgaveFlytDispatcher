@@ -1,5 +1,3 @@
-# ReadMe
-
 ## Overview
 This script automates the process of downloading, processing, and uploading Excel files between SharePoint and an orchestrator queue. It trims and cleans data before processing and ensures the correct handling of files.
 
