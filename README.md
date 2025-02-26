@@ -1,3 +1,47 @@
+# ReadMe
+
+## Overview
+This script automates the process of downloading, processing, and uploading Excel files between SharePoint and an orchestrator queue. It trims and cleans data before processing and ensures the correct handling of files.
+
+## Features
+- Downloads an Excel file from SharePoint.
+- Reads and cleans the data.
+- Prepares the data for an orchestrator queue
+- Creates queue elements
+- Uploads a new empty Excel file back to SharePoint.
+
+
+## Requirements
+- Python 3.x
+- Required libraries:
+  - `pandas`
+  - `openpyxl`
+  - `office365-rest-python-client`
+  - `json`
+  - `os`
+  - `time`
+
+## Installation
+1. Install dependencies:
+   ```sh
+   pip install pandas openpyxl office365-rest-python-client
+   ```
+2. Ensure that necessary environment variables (`OpenOrchestratorSQL`, `OpenOrchestratorKey`) are set.
+
+
+## Functions
+### `sharepoint_client(username, password, sharepoint_site_url)`
+- Authenticates and connects to SharePoint.
+
+### `download_file_from_sharepoint(client, sharepoint_file_url)`
+- Downloads a file from SharePoint and waits until it's fully available.
+
+### `upload_file_to_sharepoint(client, sharepoint_file_url, local_file_path, orchestrator_connection)`
+- Uploads the modified file back to SharePoint.
+
+### `create_empty_excel(file_path)`
+- Creates an empty Excel file with column headers.
+
 # Robot-Framework V3
 
 This repo is meant to be used as a template for robots made for [OpenOrchestrator](https://github.com/itk-dev-rpa/OpenOrchestrator).
